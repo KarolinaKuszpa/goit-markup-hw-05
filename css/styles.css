@@ -33,6 +33,23 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--white);
 }
+
+.is-hidden {
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal-window {
+    width: 528px;
+    height: 581px;
+    background-color: red;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    transition-duration: 250ms;
+    transform: scale(1);
+}
 .section {
     padding: 94px 0;
 }
