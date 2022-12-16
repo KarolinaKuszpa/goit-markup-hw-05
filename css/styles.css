@@ -34,22 +34,6 @@ body {
     background-color: var(--white);
 }
 
-.is-hidden {
-    pointer-events: none;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.modal-window {
-    width: 528px;
-    height: 581px;
-    background-color: red;
-    border-radius: 4px;
-    position: absolute;
-    z-index: 1;
-    transition-duration: 250ms;
-    transform: scale(1);
-}
 .section {
     padding: 94px 0;
 }
@@ -184,6 +168,7 @@ body {
     outline: none;
     font-weight: 700;
     margin-bottom: 106px;
+    cursor: pointer;
 }
 .order h1 {
     font-weight: 900;
@@ -518,4 +503,30 @@ figcaption {
     letter-spacing: 0.03em;
     align-items: center;
     margin-top: 12px;
+}
+
+.modal {
+    width: 528px;
+    height: 581px;
+    background-color: red;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    transition-duration: 250ms;
+    transform: scale(1);
+}
+
+.is-hidden {
+    opacity: 1;
+    pointer-events: none;
+}
+
+.data-modal {
+    position: fixed;
+    inset: 0;
+}
+.backdrop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
