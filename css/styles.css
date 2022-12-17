@@ -90,6 +90,16 @@ body {
     list-style: none;
     gap: 46px;
 }
+.agency-activ:hover::after {
+    content: '';
+    height: 4px;
+    display: flex;
+    width: 53px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    position: relative;
+    top: 28px;
+}
 
 .studio-black {
     color: var(--black);
@@ -230,6 +240,28 @@ body {
     gap: 30px;
     list-style: none;
     margin-top: 50px;
+}
+.job-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 370px;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+.job-description > p {
+    width: 190px;
+    height: 16px;
+    font-weight: 700;
+    line-height: 1.172;
+    letter-spacing: 0.03em;
+    color: var(--white);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 .our-team {
     background-color: var(--light-gray);
@@ -508,7 +540,7 @@ figcaption {
 .modal {
     width: 528px;
     height: 581px;
-    background-color: red;
+    background-color: var(--white);
     border-radius: 4px;
     position: absolute;
     z-index: 1;
@@ -517,16 +549,16 @@ figcaption {
 }
 
 .is-hidden {
-    opacity: 1;
+    visibility: hidden;
+    opacity: 0;
     pointer-events: none;
 }
 
-.data-modal {
-    position: fixed;
-    inset: 0;
-}
 .backdrop {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0;
 }
