@@ -94,13 +94,23 @@ body {
     content: '';
     height: 4px;
     display: flex;
-    width: 53px;
+    width: 100%;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    position: relative;
+    top: 28px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-activ:hover::after {
+    content: '';
+    height: 4px;
+    display: flex;
+    width: 100%;
     background-color: var(--primary-color);
     border-radius: 2px;
     position: relative;
     top: 28px;
 }
-
 .studio-black {
     color: var(--black);
 }
@@ -241,6 +251,11 @@ body {
     list-style: none;
     margin-top: 50px;
 }
+
+.jobs ul > li {
+    position: relative;
+}
+
 .job-description {
     display: flex;
     justify-content: center;
@@ -259,6 +274,7 @@ body {
     line-height: 1.172;
     letter-spacing: 0.03em;
     color: var(--white);
+    display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -374,6 +390,7 @@ body {
     line-height: 1.8;
     letter-spacing: 0.03em;
     color: var(--anthracite);
+    display: block;
 }
 
 .team-position {
@@ -381,11 +398,9 @@ body {
     line-height: 1.8;
     letter-spacing: 0.03em;
     color: var(--ash);
+    display: block;
 }
-figcaption {
-    display: flex;
-    flex-direction: column;
-}
+
 .filters {
     display: flex;
     list-style: none;
@@ -423,6 +438,36 @@ figcaption {
     margin-top: 50px;
     margin-bottom: 94px;
 }
+.effect-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    width: 370px;
+    height: 274px;
+    position: absolute;
+    background-color: rgba(33, 150, 243, 0.9);
+    inset: 0;
+    transform: translateY(100%);
+    transition: transform 250ms ease;
+}
+
+.projects-list > li > figure:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay > p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    color: var(--white);
+    margin-top: 49px;
+    margin-left: 24px;
+    margin-right: 45px;
+    margin-bottom: 49px;
+}
 
 .projects-list > li > figure:hover {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -436,6 +481,8 @@ figcaption {
     padding: 20px 0 20px 24px;
     border: 1px solid var(--light);
     border-top: none;
+    z-index: 1;
+    position: relative;
 }
 .project-name {
     font-weight: 700;
@@ -542,16 +589,30 @@ figcaption {
     height: 581px;
     background-color: var(--white);
     border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
     position: absolute;
     z-index: 1;
-    transition-duration: 250ms;
     transform: scale(1);
+    transition: transform 250ms ease;
+}
+
+.close-button {
+    position: absolute;
+    margin-left: 8px;
+    margin-top: 8px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: var(--white);
+    display: block;
 }
 
 .is-hidden {
     visibility: hidden;
     opacity: 0;
-    pointer-events: none;
+    transition: opacity 250ms ease, visibility 250ms ease, transform 250ms ease;
 }
 
 .backdrop {
@@ -561,4 +622,8 @@ figcaption {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
     inset: 0;
+}
+
+.is-hidden .modal {
+    transform: scale(0);
 }
