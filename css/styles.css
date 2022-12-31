@@ -139,20 +139,19 @@ body {
     border-radius: 2px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.contacts-list {
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-    list-style: none;
-}
-
 .contacts-list a {
     font-weight: 500;
     color: var(--ash);
     text-decoration: none;
     fill: currentColor;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts-list {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    list-style: none;
 }
 
 .contacts-list > li > a > svg {
